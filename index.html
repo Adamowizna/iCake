@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iCake</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Strona główna -->
+    <div class="container">
+        <h1 class="logo" style="color: #ff6f61;">iCake</h1>
+        <button class="btn" onclick="navigate('zamawiam')">ZAMAWIAM SŁODKOŚCI</button>
+        <button class="btn" onclick="navigate('tworze')">TWORZĘ SŁODKOŚCI</button>
+    </div>
+
+    <!-- Ekran wyboru: Rejestracja lub Logowanie dla klientów -->
+    <div id="order-screen" class="hidden">
+        <h2>Zamawiam słodkości</h2>
+        <button class="btn" onclick="showRegister()">Rejestracja</button>
+        <button class="btn" onclick="showLogin()">Logowanie</button>
+        <button class="btn back-btn" onclick="goBack()">Powrót</button>
+    </div>
+
+    <!-- Formularz rejestracji klientów -->
+    <div id="register-form" class="hidden">
+        <h2>Rejestracja</h2>
+        <form>
+            <input type="text" placeholder="Imię i nazwisko" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Telefon" required>
+            <input type="password" placeholder="Hasło (min. 8 znaków, 1 duża litera)" required>
+            <input type="password" placeholder="Powtórz hasło" required>
+            <button type="submit" class="btn">Zarejestruj się</button>
+        </form>
+        <button class="btn back-btn" onclick="goBackToOrder()">Powrót</button>
+    </div>
+
+    <!-- Formularz logowania klientów -->
+    <div id="login-form" class="hidden">
+        <h2>Logowanie</h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Hasło" required>
+            <button type="submit" class="btn" onclick="showClientDashboard()">Zaloguj się</button>
+        </form>
+        <button class="btn back-btn" onclick="goBackToOrder()">Powrót</button>
+    </div>
+
+    <!-- Ekran wyboru: Rejestracja lub Logowanie dla piekarzy -->
+    <div id="baker-screen" class="hidden">
+        <h2>Tworzę słodkości</h2>
+        <button class="btn" onclick="showBakerRegister()">Rejestracja</button>
+        <button class="btn" onclick="showBakerLogin()">Logowanie</button>
+        <button class="btn back-btn" onclick="goBack()">Powrót</button>
+    </div>
+
+    <!-- Formularz rejestracji piekarzy -->
+    <div id="baker-register-form" class="hidden">
+        <h2>Rejestracja</h2>
+        <form>
+            <input type="text" placeholder="Imię i nazwisko" required>
+            <input type="text" placeholder="Nazwa (widoczna w wyszukiwarce)" required>
+            <input type="text" placeholder="Adres (ulica, miasto)" required>
+            <input type="email" placeholder="Email" required>
+            <input type="tel" placeholder="Telefon" required>
+            <input type="password" placeholder="Hasło (min. 8 znaków, 1 duża litera)" required>
+            <input type="password" placeholder="Powtórz hasło" required>
+            <button type="submit" class="btn">Zarejestruj się</button>
+        </form>
+        <button class="btn back-btn" onclick="goBackToBakerScreen()">Powrót</button>
+    </div>
+
+    <!-- Formularz logowania piekarzy -->
+    <div id="baker-login-form" class="hidden">
+        <h2>Logowanie</h2>
+        <form>
+            <input type="email" placeholder="Email" required>
+            <input type="password" placeholder="Hasło" required>
+            <button type="submit" class="btn">Zaloguj się</button>
+        </form>
+        <button class="btn back-btn" onclick="goBackToBakerScreen()">Powrót</button>
+    </div>
+
+    <!-- Okno po zalogowaniu klienta -->
+    <div id="client-dashboard" class="hidden">
+        <header>
+            <h2>Witaj w iCake!</h2>
+            <input 
+                type="text" 
+                id="search-bar" 
+                placeholder="Szukaj cukierni po nazwie lub lokalizacji..." 
+                oninput="filterBakers()">
+        </header>
+        <div id="baker-list">
+            <!-- Lista cukierni generowana dynamicznie -->
+        </div>
+        <button class="btn back-btn" onclick="goBackToLogin()">Wyloguj się</button>
+    </div>
+
+    <script>
+        // Rejestracja Service Workera
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                .then((registration) => {
+                    console.log('Service Worker zarejestrowany:', registration);
+                })
+                .catch((error) => {
+                    console.error('Rejestracja Service Workera nie powiodła się:', error);
+                });
+            });
+        }
+    </script>
+    <script src="script.js"></script>
+</body>
+</html>

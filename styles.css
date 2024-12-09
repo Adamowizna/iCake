@@ -1,0 +1,269 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #f9c4d2, #f6edf5);
+}
+
+.container {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.header .logo {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff6f61;
+    margin-bottom: 20px;
+    text-transform: none; /* Ważne, aby zachować wielkość liter */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.btn {
+    padding: 15px 40px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+/* Media queries dla urządzeń mobilnych */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        margin-top: 20px;
+    }
+
+    .header .logo {
+        font-size: 28px; /* Zmniejszenie wielkości czcionki nagłówka */
+    }
+
+    .btn {
+        padding: 10px 20px; /* Zmniejszenie przycisków */
+        font-size: 16px; /* Dostosowanie czcionki przycisków */
+        margin: 5px 0; /* Mniejsza odległość między przyciskami */
+    }
+}
+.hidden {
+    display: none;
+}
+
+#login-screen, #register-screen {
+    text-align: center;
+    padding: 20px;
+}
+
+#login-screen h2, #register-screen h2 {
+    color: #ff6f61;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+}
+.hidden {
+    display: none;
+}
+
+#order-screen, #register-form, #login-form {
+    text-align: center;
+    padding: 20px;
+}
+
+#order-screen h2, #register-form h2, #login-form h2 {
+    color: #ff6f61;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+}
+#baker-screen, #baker-register-form, #baker-login-form {
+    text-align: center;
+    padding: 20px;
+}
+
+#baker-screen h2, #baker-register-form h2, #baker-login-form h2 {
+    color: #ff6f61;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+form button {
+    margin-top: 15px;
+}
+/* Ustawienie przycisków jeden pod drugim */
+#order-screen .btn, 
+#baker-screen .btn {
+    display: block; /* Każdy przycisk w nowym wierszu */
+    width: 80%; /* Szerokość przycisku (opcjonalnie) */
+    margin: 10px auto; /* Odstępy między przyciskami */
+    text-align: center;
+}
+/* Ustawienie przycisków jeden pod drugim z mniejszą szerokością */
+#order-screen .btn, 
+#baker-screen .btn {
+    display: block; /* Każdy przycisk w nowym wierszu */
+    width: 60%; /* Zmniejszona szerokość przycisków */
+    max-width: 300px; /* Maksymalna szerokość, aby przyciski nie były za szerokie */
+    margin: 10px auto; /* Odstępy między przyciskami */
+    text-align: center;
+}
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: url('tlo.png') no-repeat top center; /* Wycentrowanie tła */
+    background-size: contain; /* Zachowanie proporcji tła */
+    background-attachment: fixed; /* Tło stałe podczas przewijania */
+    height: 100vh; /* Dopasowanie do wysokości ekranu */
+}
+#client-dashboard {
+    text-align: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+header h2 {
+    color: #ff6f61;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#search-bar {
+    width: 80%;
+    max-width: 400px;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+#baker-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.baker-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    text-align: left;
+}
+
+.baker-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.baker-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+#baker-list {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center; /* Wyśrodkowanie elementów */
+}
+
+.baker-item {
+    width: 90%; /* Ustaw szerokość na 90% ekranu */
+    max-width: 400px; /* Maksymalna szerokość elementu */
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background: #fff;
+    text-align: left;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.baker-item h3 {
+    margin: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.baker-item p {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #555;
+}
+
